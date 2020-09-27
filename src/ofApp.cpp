@@ -283,8 +283,11 @@ void ofApp::keyReleased(int key){
         case 102: // f
             ESPsOFF();
             break;
+        case 116: // t
+            movie.setFrame(11500);
+            break;
         case 112: // p
-            movie.setFrame(5700);
+            movie.setFrame(19100);
             /*
             if(movie.isPlaying()) {
                 movie.setPaused(1);
@@ -508,7 +511,8 @@ void ofApp::setLightScene() {
             ofxAsync::run([&](){
 
                 randomIndex = (int)ofRandom(1, 11);
-                sendToESP(randomIndex, "cruising");
+                // sendToESP(randomIndex, "cruising");
+                sendToESP(randomIndex, "sinelon32_13");
                 ofSleepMillis(4000);
                 ESPsOFF();
                 ofSleepMillis(4000);
@@ -601,3 +605,9 @@ void ofApp::ESPsON() {
         (*it).Send(message.c_str(), message.length());
     }
 } 
+
+void ofApp::exit(){
+    ESPsOFF();
+    ESPsOFF();
+    ESPsOFF();
+}

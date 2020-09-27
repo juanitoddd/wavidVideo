@@ -91,6 +91,7 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();	
 		void keyReleased(int key);
+		void exit();
 		
 		/* ----- VIDEO ----*/
 		int scene_frames[12];
